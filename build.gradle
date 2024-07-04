@@ -49,5 +49,5 @@ tasks.named('test') {
 }
 
 bootJar {
-    archiveFileName = 'ingcar_boot-0.0.1-SNAPSHOT.jar'
+    archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
 }
