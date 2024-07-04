@@ -51,3 +51,7 @@ tasks.named('test') {
 bootJar {
     archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
 }
+
+springBoot {
+    mainClass = 'org.ingcar_boot_war.IngcarBootWarApplication'
+}
