@@ -55,3 +55,7 @@ bootJar {
 springBoot {
     mainClass = 'org.ingcar_boot_war.IngcarBootWarApplication'
 }
+
+jar {
+    archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
+}
