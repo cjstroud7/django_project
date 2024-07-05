@@ -51,7 +51,7 @@ tasks.named('test') {
 bootJar {
     archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
     manifest {
-        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+        attributes ('Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication')
     }
 }
 
@@ -63,6 +63,6 @@ jar {
     enabled = false
     archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT1.jar'
     manifest {
-        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+        attributes ('Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication')
     }
 }
