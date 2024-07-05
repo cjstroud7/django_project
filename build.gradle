@@ -50,6 +50,9 @@ tasks.named('test') {
 
 bootJar {
     archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
+    manifest {
+        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+    }
 }
 
 springBoot {
@@ -57,5 +60,8 @@ springBoot {
 }
 
 jar {
-    archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
+    archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT1.jar'
+    manifest {
+        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+    }
 }
