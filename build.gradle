@@ -60,6 +60,7 @@ springBoot {
 }
 
 jar {
+    enabled = false
     archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT1.jar'
     manifest {
         attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
