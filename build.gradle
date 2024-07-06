@@ -48,6 +48,17 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
 bootJar {
     archiveFileName = 'ingcar_boot-war-0.0.1-SNAPSHOT.jar'
     manifest {
