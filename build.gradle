@@ -60,8 +60,11 @@ sourceSets {
 }
 
 bootJar {
+    jar.enabled = true
     archiveFileName = 'ingcar_boot-war_0.0.1-SNAPSHOT.jar'
-    mainClass = 'org.ingcar_boot_war.IngcarBootWarApplication'
+    manifest {
+        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+    }
 }
 
 //springBoot {
