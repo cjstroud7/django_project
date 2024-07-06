@@ -59,11 +59,21 @@ sourceSets {
     }
 }
 
+//bootJar {
+//    jar.enabled = true
+//    archiveFileName = 'ingcar_boot-war_0.0.1-SNAPSHOT.jar'
+//    manifest {
+//        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+//    }
+//}
+
 bootJar {
-    jar.enabled = true
-    archiveFileName = 'ingcar_boot-war_0.0.1-SNAPSHOT.jar'
+    enabled = true
+    mainClassName = 'org.springframework.boot.loader.JarLauncher'
     manifest {
-        attributes 'Main-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+        attributes(
+                'Start-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
+        )
     }
 }
 
