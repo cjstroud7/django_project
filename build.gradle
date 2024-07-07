@@ -69,7 +69,7 @@ sourceSets {
 
 bootJar {
     enabled = true
-    mainClassName = 'org.springframework.boot.loader.JarLauncher'
+    mainClass = 'org.springframework.boot.loader.JarLauncher'
     manifest {
         attributes(
                 'Start-Class': 'org.ingcar_boot_war.IngcarBootWarApplication'
