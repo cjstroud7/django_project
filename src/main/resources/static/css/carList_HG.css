@@ -1,7 +1,7 @@
 /* 사이드바 설정 */
 .filter-wrap {
   position: fixed; /* 고정 위치 */
-  top: 60px; /* 상단에서 60px 아래에 위치 */
+  top: 150px; /* 상단에서 (60px) 아래에 위치 */
   left: 0; /* 왼쪽에 위치 */
   width: 16.66666667%; /* 전체 너비의 약 1/6 */
   height: calc(100vh - 60px); /* 전체 높이에서 60px 빼고 적용 */
