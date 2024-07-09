@@ -43,8 +43,8 @@ password=test1234
 <html>
   <p>
     <h1>관리자 모드 계정</h1>
-    <h2>id=admin1</h2>
-    <h2>password=test1234</h2>
+    <h2>  id=admin1</h2>
+    <h2>  password=test1234</h2>
   </p>
 
   <p>
