@@ -1,7 +1,4 @@
-# 관리자 모드 계정
-id=admin1
 
-password=test1234
 
 
 # 구매자1 계정
@@ -44,6 +41,21 @@ password=test1234
 # 브라우저 접속 URL : http://ec2-43-202-63-143.ap-northeast-2.compute.amazonaws.com:8080
 
 <html>
-  <h1>관리자 계정</h1>
-  <li>glgl</li>
+  <p>
+    <h1>관리자 모드 계정</h1>
+    <h2>id=admin1</h2>
+    <h2>password=test1234</h2>
+  </p>
+
+  <p>
+    
+  </p>
+
+  <p>
+    
+  </p>
+
+  <p>
+    
+  </p>
 </html>
