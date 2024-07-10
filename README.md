@@ -42,5 +42,6 @@
   </p>
 
   <p><h1>브라우저 접속 URL : 보안 때문에 포트폴리오에 올려두겠습니다.  </h1></p>
+  <h3>https://www.canva.com/design/DAGKUxjIw9s/rjpip4EOYK98iEphKNamuQ/edit?utm_content=DAGKUxjIw9s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton</h3>
   
 </html>
