@@ -763,7 +763,7 @@ public class MypageController {
 
     // 문의글 등록
     @PostMapping("/submit_inquiry")
-    public ResponseEntity<String> createInquiry(@RequestParam(name = "inquiry_title") String inquiry_title,
+    public ResponseEntity<String> createInquiry(@RequestParam(name = "inquiry_title", required = false) String inquiry_title,
                                 @RequestParam(name = "inquiry_content") String inquiry_content,
                                 HttpSession session) {
         UserDTO user_session = (UserDTO) session.getAttribute("user_session");
@@ -793,7 +793,7 @@ public class MypageController {
             e.printStackTrace();
 
             // 에러 발생 시 응답
-            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("error", HttpStatus.OK);
         }
     }
 

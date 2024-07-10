@@ -19,10 +19,12 @@ const csrftoken = getCookie('csrftoken');
 
 // 문의를 서버로 전송하는 함수
 function submitinquiry() {
-    const inquirySubject = $('#inquiryheader_area').val();
+
+    const inquirySubject = document.getElementById('inquiryheader_area').value;
     const inquiryBody = $('#inquiry_txt').val();
     console.log('*** 문의제목 = ' + inquirySubject);
     console.log('*** 문의내용 = ' + inquiryBody);
+    // alert(inquirySubject);
 
     if (!inquirySubject) {
         alert('문의 제목을 입력하십시오.');
@@ -43,7 +45,6 @@ function submitinquiry() {
             inquiry_title: inquirySubject,
             inquiry_content: inquiryBody,
         },
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success: function (response) {
 
             if (response==='redirect'){
@@ -52,6 +53,12 @@ function submitinquiry() {
             }
 
             if(response==='submit'){
+
+                alert('문의 등록이 완료 되었습니다.');
+                window.location.href = '/mypage/inquiry_list';
+            }
+
+            if (response==='error'){
 
                 alert('문의 등록이 완료 되었습니다.');
                 window.location.href = '/mypage/inquiry_list';
