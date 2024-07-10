@@ -763,8 +763,8 @@ public class MypageController {
 
     // 문의글 등록
     @PostMapping("/submit_inquiry")
-    public String createInquiry(@RequestParam("inquiry_title") String inquiry_title,
-                                @RequestParam("inquiry_content") String inquiry_content,
+    public ResponseEntity<String> createInquiry(@RequestParam(name = "inquiry_title") String inquiry_title,
+                                @RequestParam(name = "inquiry_content") String inquiry_content,
                                 HttpSession session) {
         UserDTO user_session = (UserDTO) session.getAttribute("user_session");
         String userId = user_session.getUser_id();
@@ -774,7 +774,7 @@ public class MypageController {
 
         if (userId == null) {
             // 세션에 user_id가 없는 경우 처리
-            return "redirect:/login"; // 예: 로그인 페이지로 리디렉션
+            return new ResponseEntity<>("redirect", HttpStatus.OK); // 예: 로그인 페이지로 리디렉션
         }
 
         InquiryDTO inquiryDTO = new InquiryDTO();
@@ -784,8 +784,17 @@ public class MypageController {
         inquiryDTO.setInquiry_status("N");
         System.out.println("createInquiry - inquiryDTO = " + inquiryDTO);
 
-        inquiryService.insertInquiry(inquiryDTO);
-        return "redirect:/mypage/inquiry_list";
+        try {
+
+            inquiryService.insertInquiry(inquiryDTO);
+            return new ResponseEntity<>("submit", HttpStatus.OK);
+        } catch (Exception e) {
+            // 로그를 추가하여 에러 원인 파악
+            e.printStackTrace();
+
+            // 에러 발생 시 응답
+            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 

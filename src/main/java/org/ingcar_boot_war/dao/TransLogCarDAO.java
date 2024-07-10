@@ -13,7 +13,7 @@ import java.util.List;
 public interface TransLogCarDAO {
 
     // 전체 조회 (구매중)
-    @Select("SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT * FROM TransLog A JOIN Car B ON A.car_registration_id = B.car_registration_id WHERE A.current_translog != 1 AND A.user_id = #{user_id} ORDER BY A.log_id DESC) A WHERE ROWNUM <= #{offset} + #{pageSize}) WHERE RNUM > #{offset}")
+    @Select("SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT * FROM TransLog A JOIN Car B ON A.car_registration_id = B.car_registration_id WHERE A.current_translog != 1 AND A.user_id = #{user_id} ORDER BY A.current_translog DESC, A.log_id DESC) A WHERE ROWNUM <= #{offset} + #{pageSize}) WHERE RNUM > #{offset}")
     List<TransLogCarDTO> mypage_buying(String user_id, int offset, int pageSize);
 
     // 전체 DATA 개수 (구매중)
@@ -23,14 +23,14 @@ public interface TransLogCarDAO {
     // 전체 조회 (판매중)
 //    @Select("SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT B.car_registration_id, B.car_model, B.car_price, ROW_NUMBER() OVER (ORDER BY A.log_id DESC) AS RN FROM TransLog A JOIN Car B ON A.car_registration_id = B.car_registration_id WHERE (A.current_translog = 0 OR A.current_translog=2) AND B.user_id = #{user_id}) A WHERE RN <= #{offset} + #{pageSize}) WHERE RNUM > #{offset}")
     @Select("WITH NumberedCars AS (\n" +
-            "    SELECT B.car_registration_id, B.car_model, B.car_price, \n" +
+            "    SELECT B.car_registration_id, B.car_model, B.car_price2, \n" +
             "           ROW_NUMBER() OVER (PARTITION BY B.car_registration_id ORDER BY A.log_id DESC) AS RN\n" +
             "    FROM TransLog A\n" +
             "    JOIN Car B ON A.car_registration_id = B.car_registration_id\n" +
             "    WHERE (A.current_translog = 0 OR A.current_translog = 2)\n" +
             "      AND B.user_id = #{user_id}\n" +
             "), FilteredCars AS (\n" +
-            "    SELECT car_registration_id, car_model, car_price, ROW_NUMBER() OVER (ORDER BY RN) AS RNUM\n" +
+            "    SELECT car_registration_id, car_model, car_price2, ROW_NUMBER() OVER (ORDER BY RN) AS RNUM\n" +
             "    FROM NumberedCars\n" +
             "    WHERE RN = 1\n" +
             ")\n" +

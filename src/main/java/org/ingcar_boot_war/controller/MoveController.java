@@ -22,6 +22,12 @@ public class MoveController {
         return "car_reg";
     }
 
+    @GetMapping("/about_us")
+    public String about_us() {
+
+        return "about_us";
+    }
+
 }
 
 

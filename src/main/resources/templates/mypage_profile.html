@@ -72,20 +72,20 @@
                 <li class="nav-item"><a href="/car_registration" class="nav-link" id="nav-link4">내차팔기</a></li>
                 <li class="nav-item"><a href="/car_list" class="nav-link" id="nav-link4">내차사기</a></li>
                 <li class="nav-item ative"><a href="/review_main" class="nav-link" id="nav-link4">후기게시판</a></li>
-                <li class="nav-item"><a href="/mypage" class="nav-link" id="nav-link4">마이페이지</a></li>
+                <li class="nav-item"><a href="/inform" class="nav-link" id="nav-link4">공지게시판</a></li>
             </ul>
         </div>
 
         <div class="collapse navbar-collapse" id="ftco-nav" th:if="${log!='in'}">
             <ul class="navbar-nav ml-auto" style="white-space: nowrap;">
                 <li class="nav-item"><a th:href="@{/loginPage}" class="nav-link2">Login</a></li>
-                <li class="nav-item"><a th:href="@{/inform}" class="nav-link2">Inform</a></li>
+                <li class="nav-item"><a th:href="@{/mypage}" class="nav-link2">Mypage</a></li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="ftco-nav" th:if="${log=='in'}">
             <ul class="navbar-nav ml-auto" style="white-space: nowrap;">
                 <li class="nav-item"><a th:href="@{/logout}" class="nav-link2">Logout</a></li>
-                <li class="nav-item"><a th:href="@{/inform}" class="nav-link2">Inform</a></li>
+                <li class="nav-item"><a th:href="@{/mypage}" class="nav-link2">Mypage</a></li>
             </ul>
         </div>
     </div>

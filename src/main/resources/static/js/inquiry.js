@@ -41,11 +41,21 @@ function submitinquiry() {
         url: '/mypage/submit_inquiry',
         data: {
             inquiry_title: inquirySubject,
-            inquiry_content: inquiryBody
+            inquiry_content: inquiryBody,
         },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success: function (response) {
-            alert('문의 등록이 완료 되었습니다.');
-            window.location.href = '/mypage/inquiry_list';
+
+            if (response==='redirect'){
+
+                window.location.href='/loginPage';
+            }
+
+            if(response==='submit'){
+
+                alert('문의 등록이 완료 되었습니다.');
+                window.location.href = '/mypage/inquiry_list';
+            }
         },
         error: function (xhr, status, error) {
             console.error('문의 제출에 실패했습니다:', error);
