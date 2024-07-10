@@ -41,5 +41,6 @@
     <li>password : test1234</li>
   </p>
 
-  <p><h1>브라우저 접속 URL : http://ec2-43-202-63-143.ap-northeast-2.compute.amazonaws.com:8080</h1></p>
+  <p><h1>브라우저 접속 URL : 계속 변동됩니다. 이력서에 있는 전화번호나 이메일로 연락주시면 바로 준비시키겠습니다</h1></p>
+  <div>정적인 ip는 돈이 많이 나간다고 해서... ㅠㅠ</div>
 </html>
